@@ -1,0 +1,16 @@
+p{
+   text-align: center;
+    background-color: #6f4c5b;
+    height: 60px;
+    padding-top: 20px;
+    color: white;
+    margin-bottom: 20px;
+}
+h1{
+  font-family: cursive;
+  border: 2px solid black;
+  outline: #6f4c5b solid 10px;
+  margin: auto;
+  padding: 20px;
+  text-align: left;
+}
