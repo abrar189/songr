@@ -1,12 +1,15 @@
 package com.example.songr.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class albumModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
+    @OneToMany
+    private List <Song> song;
 
     private Long id;
     private String title;
@@ -33,6 +36,14 @@ public class albumModel {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<Song> getSong() {
+        return song;
+    }
+
+    public void setSong(List<Song> song) {
+        this.song = song;
     }
 
     public String getTitle() {

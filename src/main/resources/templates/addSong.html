@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>addSong</title>
+</head>
+<body>
+<div>
+    <!-- action is the path to our POST action, method = post -->
+    <form action="'/addsong/'+ ${album.id}" th:object="${song}" method="post">
+        <!-- boring html inputs! the "name" matches the @RequestParam's on the controller -->
+        <p>Title</p><input type="text" name="title"/></br>
+        <p>Artist</p><input type="text" name="length"/></br>
+        <p>Song Count</p><input type="number" name="trackNumber"/></br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<div class="div1" th:each="song : ${song}">
+    <p th:text="'song title : '+ ${song.title}"  > </p>
+    <p th:text= " 'song lingth :' +${song.length}"> </p>
+    <p th:text= " ' song trackNumber :' + ${song.trackNumber}"></p>
+
+</div>
+</body>
+</html>
