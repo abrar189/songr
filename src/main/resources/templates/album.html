@@ -8,6 +8,13 @@
 
 </head>
 <body>
+<div class="div1" th:each="album : ${albums}">
+    <p th:text="'Album title : '+ ${album.title}"  > </p>
+    <p th:text= " 'Artist Name :' +${album.artist}"> </p>
+    <p th:text= " 'Number of songs :' + ${album.songCount}"></p>
+    <p th:text=" 'Total length :' +${album.length}"></p>
+    <img th:src="${album.imageUrl}" class="img" />
+</div>
 <div class="div1" th:each="album : ${Album}">
     <p th:text="'Album title : '+ ${album.title}"  > </p>
     <p th:text= " 'Artist Name :' +${album.artist}"> </p>
@@ -15,5 +22,20 @@
     <p th:text=" 'Total length :' +${album.length}"></p>
     <img th:src="${album.imageUrl}" class="img" />
 </div>
+<div>
+    <!-- action is the path to our POST action, method = post -->
+    <form action="/albums" method="post">
+        <!-- boring html inputs! the "name" matches the @RequestParam's on the controller -->
+        <p>Title</p><input type="text" name="title"/></br>
+        <p>Artist</p><input type="text" name="artist"/></br>
+        <p>Song Count</p><input type="number" name="songCount"/></br>
+        <p>Length</p><input type="number" name="length"/></br>
+        <p>imageUrl</p><input type="text" name="imageUrl"/></br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+
+
 </body>
 </html>
