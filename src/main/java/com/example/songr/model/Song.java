@@ -1,16 +1,12 @@
 package com.example.songr.model;
 
-
-
-
-
 import javax.persistence.*;
 
 @Entity
 public class Song {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "id", nullable = false)
+    @Column(name = "id", nullable = false)
     private  int id;
 
     private String title;
@@ -18,7 +14,8 @@ public class Song {
     private int trackNumber;
 
     @ManyToOne
-    private albumModel album;
+    @JoinColumn(name = "album_id")
+    private Album album;
 
     public Song() {
 
@@ -56,7 +53,7 @@ public class Song {
         this.trackNumber = trackNumber;
     }
 
-    public albumModel getAlbum() {
+    public Album getAlbum() {
         return album;
     }
 
@@ -68,7 +65,9 @@ public class Song {
         this.id = id;
     }
 
-    public void setAlbum(albumModel album) {
+    public void setAlbum(Album album) {
         this.album = album;
     }
+
+
 }

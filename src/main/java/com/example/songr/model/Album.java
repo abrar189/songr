@@ -4,25 +4,27 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class albumModel {
+public class Album {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    @OneToMany
+    private Long id;
+
+    @OneToMany(mappedBy = "album")
     private List <Song> song;
 
-    private Long id;
     private String title;
     private String artist;
     private int songCount;
     private int length;
     private String imageUrl;
 
-    public albumModel() {
+    public Album() {
 
     }
 
-    public albumModel(String title, String artist, int songCount, int length, String imageUrl) {
+    public Album(String title, String artist, int songCount, int length, String imageUrl) {
         this.title = title;
         this.artist = artist;
         this.songCount = songCount;
@@ -85,6 +87,8 @@ public class albumModel {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+
 
     @Override
     public String toString() {

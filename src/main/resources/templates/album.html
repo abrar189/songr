@@ -8,20 +8,16 @@
 
 </head>
 <body>
-<div class="div1" th:each="album : ${albums}">
+
+<div class="div1" th:each="album : ${Albums}">
     <p th:text="'Album title : '+ ${album.title}"  > </p>
     <p th:text= " 'Artist Name :' +${album.artist}"> </p>
     <p th:text= " 'Number of songs :' + ${album.songCount}"></p>
     <p th:text=" 'Total length :' +${album.length}"></p>
     <img th:src="${album.imageUrl}" class="img" />
+    <a th:href="'/albuminfo/'+${album.id}">Show songs</a>
 </div>
-<div class="div1" th:each="album : ${Album}">
-    <p th:text="'Album title : '+ ${album.title}"  > </p>
-    <p th:text= " 'Artist Name :' +${album.artist}"> </p>
-    <p th:text= " 'Number of songs :' + ${album.songCount}"></p>
-    <p th:text=" 'Total length :' +${album.length}"></p>
-    <img th:src="${album.imageUrl}" class="img" />
-</div>
+
 <div>
     <!-- action is the path to our POST action, method = post -->
     <form action="/albums" method="post">

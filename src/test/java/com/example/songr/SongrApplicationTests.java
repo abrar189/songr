@@ -1,6 +1,6 @@
 package com.example.songr;
 
-import com.example.songr.model.albumModel;
+import com.example.songr.model.Album;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -12,7 +12,7 @@ class SongrApplicationTests {
 
 	@Test
 	public void testAlbum(){
-		albumModel newTest= new albumModel("Sahran","Amer",8,1200,"https://1.bp.blogspot.com/-rfB8UeZc8ms/Xx2Of7yqLWI/AAAAAAAADd4/5Qmhv2z5UGEiEEwQeNVHadWzZfyTDkuygCNcBGAsYHQ/w625-h335/fgfdgfd.jpg");
+		Album newTest= new Album("Sahran","Amer",8,1200,"https://1.bp.blogspot.com/-rfB8UeZc8ms/Xx2Of7yqLWI/AAAAAAAADd4/5Qmhv2z5UGEiEEwQeNVHadWzZfyTDkuygCNcBGAsYHQ/w625-h335/fgfdgfd.jpg");
 		assertEquals("Sahran",newTest.getTitle());
 		newTest.setTitle("set titel");
 
