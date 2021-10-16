@@ -1,22 +1,22 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>add song</title>
-</head>
-<body>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>add song</title>-->
+<!--</head>-->
+<!--<body>-->
 
-<div>
-    <!-- action is the path to our POST action, method = post -->
-<!--    <form action="/addsong/+ ${Album.id}" method="post">-->
-    <form th:action= "'/addsong/' + ${Album.id}" method="post">
-        <!-- boring html inputs! the "name" matches the @RequestParam's on the controller -->
-        <p>Title</p><input type="text" name="title"/></br>
-        <p>Artist</p><input type="text" name="length"/></br>
-        <p>Song Count</p><input type="number" name="trackNumber"/></br>
-        <button type="submit">Submit</button>
-    </form>
-</div>
+<!--<div>-->
+<!--    &lt;!&ndash; action is the path to our POST action, method = post &ndash;&gt;-->
+<!--&lt;!&ndash;    <form action="/addsong/+ ${Album.id}" method="post">&ndash;&gt;-->
+<!--    <form th:action= "'/addsong/' + ${Album.id}" method="post">-->
+<!--        &lt;!&ndash; boring html inputs! the "name" matches the @RequestParam's on the controller &ndash;&gt;-->
+<!--        <p>Title</p><input type="text" name="title"/></br>-->
+<!--        <p>Artist</p><input type="text" name="length"/></br>-->
+<!--        <p>Song Count</p><input type="number" name="trackNumber"/></br>-->
+<!--        <button type="submit">Submit</button>-->
+<!--    </form>-->
+<!--</div>-->
 
-</body>
-</html>
+<!--</body>-->
+<!--</html>-->

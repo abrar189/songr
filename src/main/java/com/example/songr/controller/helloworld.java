@@ -41,18 +41,18 @@ public class helloworld {
         model.addAttribute("songs", songRepository.findAll());
         return "allsongs";
     }
-
-    @Transactional
-    @GetMapping("/albuminfo/{id}")
-    public String showAblumInfo(@PathVariable Long id, Model model) {
-        System.out.println(id);
-        Album album = albumRepository.findById(id).orElseThrow();
-        List<Song> songsList = album.getSong();
-        model.addAttribute("Album", album);
-        model.addAttribute("Songs", songsList);
-        return "albuminfo.html";
-    }
-
+//
+//    @Transactional
+//    @GetMapping("/albuminfo/{id}")
+//    public String showAblumInfo(@PathVariable Long id, Model model) {
+//        System.out.println(id);
+//        Album album = albumRepository.findById(id).orElseThrow();
+//        List<Song> songsList = album.getSong();
+//        model.addAttribute("Album", album);
+//        model.addAttribute("Songs", songsList);
+//        return "albuminfo.html";
+//    }
+//
     @GetMapping("/addsong")
     public String addsongpage() {
         return "addSong";
@@ -72,44 +72,6 @@ public class helloworld {
         return new RedirectView("/songs");
     }
 
-//    @GetMapping("addsong/{id}")
-//    public String getSong(@PathVariable("id") String id, Model model) {
-//        model.addAttribute("Album", albumRepository.findById(Long.parseLong(id)).orElseThrow());
-//        return ("addsongbyid");
-//    }
-
-//    @PostMapping("/addsong/{albumId}")
-//    public RedirectView addsong(@PathVariable String albumId, @ModelAttribute Song song) {
-//
-//        Album songAlbum = albumRepository.findById(Long.parseLong(albumId)).orElseThrow();
-//
-//        Song song1 = new Song(song.getTitle(), song.getLength(), song.getTrackNumber());
-//        song.setAlbum(songAlbum);
-//
-//        songRepository.save(song1);
-//
-//        return new RedirectView("/songs");
-//    }
-
-//    @PostMapping("/addsong/{albumId}")
-//    public RedirectView addsong(@RequestParam String title,int length,int trackNumber,@PathVariable ("id") int postId){
-//
-//        return new RedirectView("/albums/{postId}");
-//    }
-
-//    @GetMapping("albums/{id}")
-//    public String getSong(@PathVariable ("id") int id,Model m){
-//        m.addAttribute("album",albumRepository.findById(Long.parseLong(id)).orElseThrow();
-//        return ("detailedAlbums.html");
-//    }
-//    @GetMapping("/album/{postId}")
-//    public String findalbumByPostId(@PathVariable String postId, Model model) {
-//        Song album = songRepository.findById(Long.parseLong(postId)).orElseThrow();
-//        model.addAttribute("song", album);
-//
-//        return "album";
-//    }
-//
 
 
     @GetMapping("/hello")
